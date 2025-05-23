@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BlackJackTable from './BlackJackTable';
+import Blackjack3DTable from './Blackjack3DTable';
 const { Deck } = require('../DeckLogic/Deck');
 
 const getCardString = (card) => `${card.value}${card.suit}`;
@@ -30,7 +31,7 @@ const Game = () => {
     const [hasDoubled, setHasDoubled] = useState(false);
     const [flipDealerCard, setFlipDealerCard] = useState(false);
 
-
+    
     useEffect(() => {
         startNewGame();
     }, []);
@@ -172,6 +173,8 @@ const Game = () => {
                 gameStatus={gameStatus}
                 flipDealerCard={flipDealerCard}
             />
+
+
             <button onClick={startNewGame} style={{ marginTop: 16 }}>Restart Game</button>
         </div>
     );
